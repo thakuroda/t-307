@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-</head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 <body>
+    {{nome}}
+    {% if nome == "cachorro" %}
+        <p>Sim, essa é de cachorros</p>
+    {% elif nome == "gato" %}
+        <p>Essa página é de gatos</p>
+    {% else %}    
+        <p>Essa página não é de nada</p>
+    {% endif %}
+    <h1>Esses são nossos Dogs</h1>
+    <ul>
+    {% for dog in cachorros %}
+       <li>{{dog}}</li>
+    {% endfor %}
+    </ul>
     
 </body>
 </html>
